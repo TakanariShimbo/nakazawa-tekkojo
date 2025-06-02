@@ -64,7 +64,7 @@ const componentHTML = {
                         <a href="contact.html" class="header__nav-link">お問い合わせ</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="header__nav-link header__nav-link--social" aria-label="Instagram">
+                        <a href="https://www.instagram.com/nakazawa_tecko/" target="_blank" rel="noopener noreferrer" class="header__nav-link header__nav-link--social" aria-label="Instagram">
                             インスタグラム
                         </a>
                     </li>
@@ -72,7 +72,7 @@ const componentHTML = {
             </div>
         </nav>
     </header>`,
-    
+
     footer: `
     <footer class="footer">
         <div class="footer__main">
@@ -121,7 +121,7 @@ const componentHTML = {
                         <h3 class="footer__nav-heading">Follow Us</h3>
                         <ul class="footer__nav-list">
                             <li>
-                                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+                                <a href="https://www.instagram.com/nakazawa_tecko/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
                                     インスタグラム
                                 </a>
                             </li>
@@ -150,16 +150,16 @@ function loadComponents() {
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = componentHTML.header;
     }
-    
+
     // フッターを挿入
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
         footerPlaceholder.innerHTML = componentHTML.footer;
     }
-    
+
     // 現在のページをアクティブに設定
     setActiveNavItem();
-    
+
     // モバイルメニューの初期化
     initMobileMenu();
 }
@@ -170,7 +170,7 @@ function loadComponents() {
 function setActiveNavItem() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.header__nav-link');
-    
+
     navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
             link.classList.add('header__nav-link--active');
@@ -184,13 +184,13 @@ function setActiveNavItem() {
 function initMobileMenu() {
     const menuToggle = document.querySelector('.header__menu-toggle');
     const nav = document.querySelector('.header__nav');
-    
+
     if (menuToggle && nav) {
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('is-active');
             nav.classList.toggle('is-active');
         });
-        
+
         // メニューの外をクリックしたら閉じる
         document.addEventListener('click', (e) => {
             if (!menuToggle.contains(e.target) && !nav.contains(e.target)) {

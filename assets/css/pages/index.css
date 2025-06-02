@@ -326,6 +326,16 @@
 
     .hero__content {
         text-align: center;
+        justify-content: center;
+    }
+    
+    .hero__text {
+        margin: 0 auto;
+    }
+    
+    .hero__title,
+    .hero__description {
+        text-align: center;
     }
 
     .intro {

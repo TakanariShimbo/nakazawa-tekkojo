@@ -209,6 +209,15 @@
     margin: 0 auto;
 }
 
+/* 会社概要・アクセスセクションの会社情報レイアウト */
+.section--gray .company-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: start;
+    max-width: none;
+}
+
 .company-info__item {
     display: grid;
     grid-template-columns: 140px 1fr;
@@ -295,6 +304,43 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-2xl);
+}
+
+/* 会社情報テーブルスタイル（indexページと同じ） */
+.section--gray .company-info__table {
+    width: 100%;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.section--gray .company-info__table th {
+    width: 120px;
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+    text-align: left;
+    vertical-align: top;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.section--gray .company-info__table td {
+    color: var(--color-gray-700);
+    line-height: var(--line-height-relaxed);
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-md) 0 var(--spacing-md) var(--spacing-md);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.section--gray .company-info__table tr:last-child th,
+.section--gray .company-info__table tr:last-child td {
+    border-bottom: none;
+}
+
+.company-info__map {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
 }
 
 .access__title {
@@ -546,6 +592,28 @@
         left: 0;
         content: "・";
         color: var(--color-primary);
+    }
+
+    /* 会社概要・アクセス - レスポンシブ対応 */
+    .section--gray .company-info {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .section--gray .company-info__table th {
+        width: 90px;
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-sm) 0;
+    }
+
+    .section--gray .company-info__table td {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-sm);
+    }
+
+    .section--gray .company-info__table {
+        margin-top: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
     }
 
     /* 見出しを中央揃え */

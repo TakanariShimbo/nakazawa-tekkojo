@@ -65,32 +65,12 @@
     line-height: var(--line-height-tight);
 }
 
-.hero__subtitle {
-    display: block;
-    font-size: clamp(var(--font-size-lg), 2.5vw, var(--font-size-2xl));
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.9);
-    margin-top: var(--spacing-sm);
-}
-
 .hero__description {
     font-size: var(--font-size-lg);
     margin-bottom: var(--spacing-xl);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     color: rgba(255, 255, 255, 0.9);
     line-height: var(--line-height-relaxed);
-}
-
-.hero__buttons {
-    display: flex;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
-}
-
-.hero__stats {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
 }
 
 .stat-item {
@@ -189,60 +169,6 @@
     font-weight: 600;
 }
 
-/* 数値セクション */
-.stats-section {
-    padding: var(--spacing-5xl) 0;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-3xl);
-}
-
-.stats-card {
-    background: var(--color-white);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-    border: 1px solid var(--color-gray-100);
-}
-
-.stats-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-.stats-card__icon {
-    font-size: var(--font-size-4xl);
-    margin-bottom: var(--spacing-md);
-}
-
-.stats-card__number {
-    font-size: var(--font-size-4xl);
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1;
-}
-
-.stats-card__label {
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-    color: var(--color-gray-900);
-    margin-bottom: var(--spacing-sm);
-}
-
-.stats-card__description {
-    font-size: var(--font-size-sm);
-    color: var(--color-gray-600);
-    line-height: var(--line-height-relaxed);
-}
-
 /* サービスタブ */
 .services-section {
     padding: var(--spacing-5xl) 0;
@@ -259,7 +185,7 @@
     background: var(--color-gray-100);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xs);
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-xl);
     overflow-x: auto;
 }
 
@@ -304,11 +230,6 @@
     padding: var(--spacing-3xl);
     background: var(--color-gray-50);
     border-radius: var(--border-radius-lg);
-}
-
-.service-showcase--recruit {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 191, 36, 0.1) 100%);
-    border: 2px solid rgba(245, 158, 11, 0.2);
 }
 
 .service-showcase__text h3 {
@@ -369,73 +290,82 @@
         height: 70vh;
         min-height: 500px;
     }
-    
+
     .hero__content {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
         text-align: center;
     }
-    
+
     .hero__stats {
         flex-direction: row;
         justify-content: center;
         gap: var(--spacing-md);
     }
-    
+
     .stat-item {
         padding: var(--spacing-md);
         min-width: 80px;
     }
-    
+
     .stat-item__number {
         font-size: var(--font-size-xl);
     }
-    
+
     .stat-item__label {
         font-size: var(--font-size-xs);
     }
-    
+
     .hero__buttons {
         justify-content: center;
     }
-    
+
     .intro {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
         text-align: center;
     }
-    
+
     .intro__image {
         order: -1;
     }
-    
+
     .intro__image img {
         height: 250px;
     }
-    
+
     .stats-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
-    
+
     .service-tabs__nav {
         flex-direction: column;
         gap: var(--spacing-xs);
     }
-    
+
     .service-tab {
         text-align: center;
     }
-    
+
     .service-showcase {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
         text-align: center;
         padding: var(--spacing-xl);
     }
-    
+
     .service-showcase__image {
         order: -1;
+    }
+
+    .company-info {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .company-info__content {
+        padding-right: 0;
     }
 }
 
@@ -443,15 +373,95 @@
     .hero__content {
         gap: var(--spacing-5xl);
     }
-    
+
     .intro {
         gap: var(--spacing-5xl);
     }
-    
+
     .service-showcase {
         gap: var(--spacing-5xl);
         padding: var(--spacing-4xl);
     }
+}
+
+/* 会社情報 */
+.company-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: start;
+}
+
+.company-info__content {
+    padding-right: var(--spacing-lg);
+}
+
+.company-info__table {
+    width: 100%;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.company-info__table th {
+    width: 120px;
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+    text-align: left;
+    vertical-align: top;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--color-gray-200);
+    background-color: var(--color-white);
+}
+
+.company-info__table td {
+    color: var(--color-gray-700);
+    line-height: var(--line-height-relaxed);
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-md) 0 var(--spacing-md) var(--spacing-md);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.company-info__table tr:last-child th,
+.company-info__table tr:last-child td {
+    border-bottom: none;
+}
+
+.company-info__map {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+/* CTAセクション */
+.cta {
+    background: var(--color-gray-50);
+    color: var(--color-gray-900);
+}
+
+.cta__content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cta__title {
+    font-size: var(--font-size-3xl);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 700;
+}
+
+.cta__text {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-xl);
+    line-height: var(--line-height-relaxed);
+}
+
+.cta__buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
 }
 
 /* アクセント色のボタン */

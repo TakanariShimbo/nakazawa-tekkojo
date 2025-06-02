@@ -363,45 +363,206 @@
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
-    .company-block__title {
-        font-size: var(--font-size-xl);
-        flex-wrap: wrap;
+    /* セクション余白調整 */
+    .section {
+        padding: var(--spacing-xl) 0;
     }
     
+    .section:not(:last-child) {
+        padding-bottom: var(--spacing-2xl);
+    }
+    
+    /* 会社ブロック全般 */
+    .company-list {
+        gap: var(--spacing-2xl);
+    }
+    
+    .company-block {
+        padding-bottom: var(--spacing-2xl);
+    }
+    
+    .company-block__number {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: var(--font-size-base);
+        margin-right: var(--spacing-sm);
+    }
+    
+    .company-block__title {
+        font-size: var(--font-size-xl);
+        text-align: center;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    /* 企業理念 */
     .company-block__content {
-        flex-direction: column;
+        text-align: center;
         gap: var(--spacing-lg);
     }
     
     .company-block__image {
         width: 100%;
         max-width: 300px;
-        align-self: center;
+        margin: 0 auto;
     }
     
+    .company-block__catchphrase {
+        font-size: var(--font-size-xl);
+        text-align: center;
+    }
+    
+    .company-block__description {
+        text-align: center;
+        font-size: var(--font-size-sm);
+    }
+    
+    /* 事業目的・経営指針 */
     .company-block__policy-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .policy-item {
+        padding: var(--spacing-lg);
+        text-align: center;
+    }
+    
+    .policy-item__title {
+        font-size: var(--font-size-base);
+        text-align: center;
+    }
+    
+    .policy-item__text,
+    .policy-item__list {
+        font-size: var(--font-size-sm);
+        text-align: left;
+    }
+    
+    /* 行動指針 */
+    .company-block__motto-text {
+        font-size: var(--font-size-base);
+        padding: var(--spacing-md);
     }
     
     .company-block__action-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .history__item {
-        grid-template-columns: 100px 1fr;
         gap: var(--spacing-md);
     }
     
-    .table th {
-        width: auto;
-        display: block;
-        border-bottom: none;
+    .action-item {
+        padding: var(--spacing-md);
     }
     
-    .table td {
-        display: block;
-        border-top: none;
-        margin-bottom: var(--spacing-md);
+    .action-item__title {
+        font-size: var(--font-size-base);
+    }
+    
+    /* 会社情報テーブル */
+    .company-table {
+        overflow-x: auto;
+    }
+    
+    .company-table .table {
+        min-width: 300px;
+    }
+    
+    .company-table th {
+        width: 100px;
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-md) 0;
+    }
+    
+    .company-table td {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-md) 0 var(--spacing-md) var(--spacing-md);
+    }
+    
+    /* 沿革 */
+    .history__item {
+        grid-template-columns: 80px 1fr;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md) 0;
+    }
+    
+    .history__year {
+        font-size: var(--font-size-xs);
+    }
+    
+    .history__content {
+        font-size: var(--font-size-xs);
+    }
+    
+    /* 主要取引先 */
+    .clients__list {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .clients__item {
+        padding: var(--spacing-sm);
+        font-size: var(--font-size-sm);
+    }
+    
+    /* アクセス */
+    .access {
+        gap: var(--spacing-xl);
+    }
+    
+    .access__info {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .access__title {
+        font-size: var(--font-size-lg);
+        text-align: center;
+    }
+    
+    .access__address {
+        text-align: center;
+        font-size: var(--font-size-sm);
+        line-height: var(--line-height-relaxed);
+    }
+    
+    .access__directions {
+        margin-top: var(--spacing-lg);
+        text-align: center;
+    }
+    
+    .access__directions h4 {
+        font-size: var(--font-size-base);
+        text-align: center;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .access__directions ul {
+        padding: 0;
+        list-style: none;
+        max-width: 280px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    
+    .access__directions li {
+        font-size: var(--font-size-xs);
+        line-height: var(--line-height-relaxed);
+        margin-bottom: var(--spacing-xs);
+        word-wrap: break-word;
+        padding-left: var(--spacing-md);
+        position: relative;
+    }
+    
+    .access__directions li::before {
+        position: absolute;
+        left: 0;
+        content: "・";
+        color: var(--color-primary);
+    }
+    
+    /* 見出しを中央揃え */
+    .section__title {
+        text-align: center;
     }
 }
 

@@ -9,19 +9,19 @@ function initFacilityFilter() {
     const filterButtons = document.querySelectorAll('.facility-filter__btn');
     const facilityCategories = document.querySelectorAll('.facility-category');
     const facilityCards = document.querySelectorAll('.facility-card');
-    
+
     if (!filterButtons.length) return;
-    
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const selectedCategory = button.getAttribute('data-category');
-            
+
             // ボタンのアクティブ状態を更新
             filterButtons.forEach(btn => {
                 btn.classList.remove('facility-filter__btn--active');
             });
             button.classList.add('facility-filter__btn--active');
-            
+
             // カテゴリーの表示/非表示を切り替え
             if (selectedCategory === 'all') {
                 // すべて表示
@@ -41,7 +41,7 @@ function initFacilityFilter() {
                         category.classList.remove('is-visible');
                     }
                 });
-                
+
                 // カードの表示/非表示
                 facilityCards.forEach(card => {
                     const cardCategory = card.getAttribute('data-category');
@@ -52,13 +52,13 @@ function initFacilityFilter() {
                     }
                 });
             }
-            
+
             // スムーズスクロール
             const firstVisibleCategory = document.querySelector('.facility-category.is-visible');
             if (firstVisibleCategory && selectedCategory !== 'all') {
                 const offset = 100; // ヘッダーの高さ分のオフセット
                 const targetPosition = firstVisibleCategory.getBoundingClientRect().top + window.pageYOffset - offset;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -66,7 +66,7 @@ function initFacilityFilter() {
             }
         });
     });
-    
+
     // 初期状態：すべて表示
     facilityCategories.forEach(category => {
         category.classList.add('is-visible');
@@ -78,10 +78,10 @@ function initFacilityFilter() {
  */
 function initFacilityModal() {
     const facilityImages = document.querySelectorAll('.facility-card__image img');
-    
+
     facilityImages.forEach(img => {
         img.style.cursor = 'pointer';
-        
+
         img.addEventListener('click', (e) => {
             // モーダルを作成
             const modal = document.createElement('div');
@@ -93,19 +93,19 @@ function initFacilityModal() {
                     <button class="facility-modal__close" aria-label="閉じる">×</button>
                 </div>
             `;
-            
+
             document.body.appendChild(modal);
             document.body.style.overflow = 'hidden';
-            
+
             // アニメーション用のクラスを追加
             setTimeout(() => {
                 modal.classList.add('is-active');
             }, 10);
-            
+
             // 閉じるボタンのイベント
             const closeBtn = modal.querySelector('.facility-modal__close');
             const overlay = modal.querySelector('.facility-modal__overlay');
-            
+
             const closeModal = () => {
                 modal.classList.remove('is-active');
                 document.body.style.overflow = '';
@@ -113,10 +113,10 @@ function initFacilityModal() {
                     modal.remove();
                 }, 300);
             };
-            
+
             closeBtn.addEventListener('click', closeModal);
             overlay.addEventListener('click', closeModal);
-            
+
             // ESCキーで閉じる
             const handleEsc = (e) => {
                 if (e.key === 'Escape') {

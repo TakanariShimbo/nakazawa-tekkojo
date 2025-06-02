@@ -256,11 +256,12 @@
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
+
     .contact-form-section,
     .contact-info-section {
         padding: var(--spacing-lg);
     }
-    
+
     .contact-info__phone {
         font-size: var(--font-size-xl);
     }
@@ -270,7 +271,7 @@
     .contact-wrapper {
         grid-template-columns: 2fr 1fr;
     }
-    
+
     .contact-info-section {
         position: sticky;
         top: 100px;

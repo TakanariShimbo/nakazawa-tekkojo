@@ -28,7 +28,7 @@ function initFadeInAnimation() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -37,7 +37,7 @@ function initFadeInAnimation() {
             }
         });
     }, observerOptions);
-    
+
     document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
     });
@@ -48,7 +48,7 @@ function initFadeInAnimation() {
  */
 function initLazyLoading() {
     const lazyImages = document.querySelectorAll('img[data-src]');
-    
+
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -60,7 +60,7 @@ function initLazyLoading() {
                 }
             });
         });
-        
+
         lazyImages.forEach(img => imageObserver.observe(img));
     } else {
         // フォールバック
@@ -76,13 +76,13 @@ function initLazyLoading() {
  */
 function initParallaxEffect() {
     const parallaxElements = document.querySelectorAll('.philosophy__image');
-    
+
     if (parallaxElements.length === 0) return;
-    
+
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const rate = scrolled * -0.5;
-        
+
         parallaxElements.forEach(element => {
             element.style.transform = `translateY(${rate}px)`;
         });
@@ -95,17 +95,17 @@ function initParallaxEffect() {
 function initServiceTabs() {
     const tabs = document.querySelectorAll('.service-tab');
     const contents = document.querySelectorAll('.service-tab-content');
-    
+
     if (tabs.length === 0) return;
-    
+
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const targetTab = tab.getAttribute('data-tab');
-            
+
             // すべてのタブとコンテンツからactiveクラスを削除
             tabs.forEach(t => t.classList.remove('active'));
             contents.forEach(c => c.classList.remove('active'));
-            
+
             // クリックされたタブとそのコンテンツにactiveクラスを追加
             tab.classList.add('active');
             const targetContent = document.getElementById(targetTab);
@@ -121,25 +121,25 @@ function initServiceTabs() {
  */
 function initCountUpAnimation() {
     const statsNumbers = document.querySelectorAll('.stats-card__number, .stat-item__number');
-    
+
     const observerOptions = {
         threshold: 0.5,
         rootMargin: '0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const element = entry.target;
                 const finalNumber = element.textContent;
-                
+
                 // 数値以外の文字（+、/など）を分離
                 const numberMatch = finalNumber.match(/\d+/);
                 if (numberMatch) {
                     const targetNumber = parseInt(numberMatch[0]);
                     const prefix = finalNumber.split(numberMatch[0])[0];
                     const suffix = finalNumber.split(numberMatch[0])[1] || '';
-                    
+
                     let currentNumber = 0;
                     const increment = targetNumber / 30;
                     const timer = setInterval(() => {
@@ -152,12 +152,12 @@ function initCountUpAnimation() {
                         }
                     }, 50);
                 }
-                
+
                 observer.unobserve(element);
             }
         });
     }, observerOptions);
-    
+
     statsNumbers.forEach(number => {
         observer.observe(number);
     });
@@ -168,17 +168,17 @@ function initCountUpAnimation() {
  */
 function initFormValidation() {
     const forms = document.querySelectorAll('.form-validate');
-    
+
     forms.forEach(form => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             let isValid = true;
             const requiredFields = form.querySelectorAll('[required]');
-            
+
             requiredFields.forEach(field => {
                 const errorElement = field.parentElement.querySelector('.form-error');
-                
+
                 if (!field.value.trim()) {
                     isValid = false;
                     field.classList.add('form-control--error');
@@ -191,7 +191,7 @@ function initFormValidation() {
                         errorElement.textContent = '';
                     }
                 }
-                
+
                 // メールアドレスの検証
                 if (field.type === 'email' && field.value) {
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -204,19 +204,19 @@ function initFormValidation() {
                     }
                 }
             });
-            
+
             if (isValid) {
                 // フォーム送信処理
                 console.log('フォーム送信');
                 // 実際の実装では、ここでAjaxリクエストなどを行う
             }
         });
-        
+
         // リアルタイムバリデーション
         form.querySelectorAll('[required]').forEach(field => {
             field.addEventListener('blur', () => {
                 const errorElement = field.parentElement.querySelector('.form-error');
-                
+
                 if (!field.value.trim()) {
                     field.classList.add('form-control--error');
                     if (errorElement) {
@@ -242,7 +242,7 @@ function initBackToTop() {
     backToTopBtn.innerHTML = '↑';
     backToTopBtn.setAttribute('aria-label', 'ページトップへ戻る');
     document.body.appendChild(backToTopBtn);
-    
+
     // スタイルを追加
     const style = document.createElement('style');
     style.textContent = `
@@ -274,7 +274,7 @@ function initBackToTop() {
         }
     `;
     document.head.appendChild(style);
-    
+
     // スクロールイベント
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
@@ -283,7 +283,7 @@ function initBackToTop() {
             backToTopBtn.classList.remove('is-visible');
         }
     });
-    
+
     // クリックイベント
     backToTopBtn.addEventListener('click', () => {
         window.scrollTo({

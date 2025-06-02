@@ -184,7 +184,7 @@
 }
 
 .voice-card::before {
-    content: """;
+    content: "";
     position: absolute;
     top: var(--spacing-md);
     left: var(--spacing-md);
@@ -306,31 +306,31 @@
         background-attachment: scroll;
         padding: var(--spacing-2xl) 0;
     }
-    
+
     .job-card__header {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing-sm);
     }
-    
+
     .career-grid,
     .voice-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .apply-steps {
         flex-direction: column;
     }
-    
+
     .apply-step__arrow {
         transform: rotate(90deg);
     }
-    
+
     .apply-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .apply-buttons .btn {
         width: 100%;
         max-width: 300px;
@@ -341,11 +341,11 @@
     .recruit-header {
         padding: calc(var(--spacing-3xl) * 1.5) 0;
     }
-    
+
     .page-header__title--white {
         font-size: var(--font-size-5xl);
     }
-    
+
     .page-header__subtitle {
         font-size: var(--font-size-2xl);
     }

@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お問い合わせ - 有限会社 中澤鉄工所</title>
     <meta name="description" content="中澤鉄工所へのお問い合わせはこちらから。金属加工のご相談、お見積もりなど、お気軽にお問い合わせください。">
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/pages/contact.css">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
+
 <body>
     <!-- ヘッダー -->
     <div id="header-placeholder"></div>
-    
+
     <!-- メインコンテンツ -->
     <main class="main">
         <!-- ページヘッダー -->
@@ -27,7 +29,7 @@
                 <h1 class="page-header__title fade-in">お問い合わせ</h1>
             </div>
         </section>
-        
+
         <!-- お問い合わせフォームセクション -->
         <section class="section">
             <div class="container">
@@ -39,30 +41,30 @@
                             金属加工のご相談、お見積もりのご依頼など、お気軽にお問い合わせください。<br>
                             <span class="required-note">※ は必須項目です</span>
                         </p>
-                        
+
                         <form class="contact-form form-validate" id="contactForm">
                             <div class="form-group">
                                 <label for="company" class="form-label">会社名</label>
                                 <input type="text" id="company" name="company" class="form-control">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="name" class="form-label form-label--required">お名前</label>
                                 <input type="text" id="name" name="name" class="form-control" required>
                                 <span class="form-error"></span>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="email" class="form-label form-label--required">メールアドレス</label>
                                 <input type="email" id="email" name="email" class="form-control" required>
                                 <span class="form-error"></span>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="phone" class="form-label">電話番号</label>
                                 <input type="tel" id="phone" name="phone" class="form-control">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="subject" class="form-label form-label--required">お問い合わせ種別</label>
                                 <select id="subject" name="subject" class="form-control" required>
@@ -74,13 +76,13 @@
                                 </select>
                                 <span class="form-error"></span>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="message" class="form-label form-label--required">お問い合わせ内容</label>
                                 <textarea id="message" name="message" class="form-control" rows="8" required></textarea>
                                 <span class="form-error"></span>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="privacy" required>
@@ -88,30 +90,30 @@
                                 </label>
                                 <span class="form-error"></span>
                             </div>
-                            
+
                             <div class="form-actions">
                                 <button type="submit" class="btn btn--primary btn--large">
                                     送信する
                                 </button>
                             </div>
                         </form>
-                        
+
                         <!-- フォーム送信後のメッセージ -->
                         <div class="form-message form-message--success" id="successMessage" style="display: none;">
                             <h3>お問い合わせありがとうございました</h3>
                             <p>内容を確認の上、担当者よりご連絡させていただきます。</p>
                         </div>
-                        
+
                         <div class="form-message form-message--error" id="errorMessage" style="display: none;">
                             <h3>送信エラー</h3>
                             <p>申し訳ございません。送信中にエラーが発生しました。<br>お手数ですが、時間をおいて再度お試しください。</p>
                         </div>
                     </div>
-                    
+
                     <!-- 右側：連絡先情報 -->
                     <div class="contact-info-section fade-in">
                         <h2 class="contact-info__title">連絡先情報</h2>
-                        
+
                         <div class="contact-info__item">
                             <h3 class="contact-info__label">電話でのお問い合わせ</h3>
                             <p class="contact-info__detail">
@@ -124,7 +126,7 @@
                                 受付時間：平日 8:00～17:00
                             </p>
                         </div>
-                        
+
                         <div class="contact-info__item">
                             <h3 class="contact-info__label">FAX</h3>
                             <p class="contact-info__detail">
@@ -132,7 +134,7 @@
                                 0258-63-2437
                             </p>
                         </div>
-                        
+
                         <div class="contact-info__item">
                             <h3 class="contact-info__label">所在地</h3>
                             <address class="contact-info__address">
@@ -140,18 +142,14 @@
                                 新潟県見附市葛巻２丁目５番５号
                             </address>
                         </div>
-                        
+
                         <div class="contact-info__map">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.5!2d138.9!3d37.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDE4JzAwLjAiTiAxMzjCsDU0JzAwLjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890" 
-                                width="100%" 
-                                height="300" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.5!2d138.9!3d37.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDE4JzAwLjAiTiAxMzjCsDU0JzAwLjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890"
+                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
                             </iframe>
                         </div>
-                        
+
                         <div class="contact-info__notes">
                             <h3 class="contact-info__label">お問い合わせの前に</h3>
                             <ul class="contact-info__list">
@@ -164,7 +162,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- プライバシーポリシー -->
         <section class="section section--gray" id="privacy-policy">
             <div class="container">
@@ -175,7 +173,7 @@
                         <p>
                             有限会社中澤鉄工所（以下「当社」）は、お客様の個人情報を以下のとおり取り扱います。
                         </p>
-                        
+
                         <h4>1. 個人情報の利用目的</h4>
                         <p>
                             お客様からお預かりした個人情報は、以下の目的で利用いたします。
@@ -186,17 +184,17 @@
                             <li>製品・サービスに関する情報提供</li>
                             <li>その他、お客様との連絡・業務遂行</li>
                         </ul>
-                        
+
                         <h4>2. 個人情報の第三者提供</h4>
                         <p>
                             当社は、法令に基づく場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。
                         </p>
-                        
+
                         <h4>3. 個人情報の管理</h4>
                         <p>
                             当社は、お客様の個人情報を適切に管理し、不正アクセス、紛失、破損、改ざん、漏洩などの防止に努めます。
                         </p>
-                        
+
                         <h4>4. お問い合わせ</h4>
                         <p>
                             個人情報の取り扱いに関するお問い合わせは、お電話またはお問い合わせフォームよりお願いいたします。
@@ -206,13 +204,14 @@
             </div>
         </section>
     </main>
-    
+
     <!-- フッター -->
     <div id="footer-placeholder"></div>
-    
+
     <!-- JavaScript -->
     <script src="assets/js/components.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/contact.js"></script>
 </body>
+
 </html>

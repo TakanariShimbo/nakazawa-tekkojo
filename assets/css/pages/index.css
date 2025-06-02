@@ -43,6 +43,7 @@
 }
 
 .hero__content {
+    padding: 0 var(--spacing-3xl);
     position: relative;
     z-index: 2;
     display: flex;
@@ -73,7 +74,7 @@
 
 /* 簡潔な紹介セクション */
 .intro-section {
-    padding: var(--spacing-5xl) 0;
+    padding-top: var(--spacing-5xl);
     background: var(--color-white);
 }
 
@@ -82,6 +83,7 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-4xl);
     align-items: center;
+    padding: 0 var(--spacing-3xl);
 }
 
 .intro__content {
@@ -131,21 +133,26 @@
 
 /* サービスタブ */
 .services-section {
-    padding: var(--spacing-5xl) 0;
-    background: var(--color-white);
+    background: var(--color-gray-50);
 }
 
 .service-tabs {
     margin: 0 auto;
+    position: relative;
 }
 
 .service-tabs__nav {
     display: flex;
-    background: var(--color-gray-100);
-    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
     padding: var(--spacing-xs);
-    margin-bottom: var(--spacing-xl);
-    overflow-x: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    gap: var(--spacing-xs);
+    width: 100%;
 }
 
 .service-tab {
@@ -187,8 +194,10 @@
     gap: var(--spacing-4xl);
     align-items: center;
     padding: var(--spacing-3xl);
-    background: var(--color-gray-50);
     border-radius: var(--border-radius-lg);
+    position: relative;
+    margin-top: 0;
+    background: var(--color-white);
 }
 
 .service-showcase__text h3 {
@@ -249,6 +258,7 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-3xl);
     align-items: start;
+    padding: 0 var(--spacing-3xl);
 }
 
 .company-info__content {
@@ -299,6 +309,7 @@
 }
 
 .cta__content {
+    padding: 0 var(--spacing-3xl);
     margin: 0 auto;
 }
 
@@ -325,6 +336,7 @@
     .hero__content {
         text-align: center;
         justify-content: center;
+        padding: 0;
     }
 
     .hero__text {
@@ -340,6 +352,7 @@
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
         text-align: center;
+        padding: 0;
     }
 
     .intro__content {
@@ -360,12 +373,23 @@
     }
 
     .service-tabs__nav {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-xs);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
     }
 
     .service-tab {
         text-align: center;
+        min-width: auto;
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
     }
 
     .service-showcase {
@@ -373,6 +397,8 @@
         gap: var(--spacing-xl);
         text-align: center;
         padding: var(--spacing-xl);
+        padding-top: var(--spacing-5xl);
+        margin-top: 0;
     }
 
     .service-showcase__text h3,
@@ -400,6 +426,7 @@
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
         text-align: center;
+        padding: 0;
     }
 
     .company-info__content {
@@ -420,10 +447,26 @@
     /* CTAセクション */
     .cta__content {
         text-align: center;
+        padding: 0;
     }
 
     .cta__buttons {
         justify-content: center;
+    }
+}
+
+/* タブレット */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .service-tabs__nav {
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .service-showcase {
+        margin-top: 0;
+        padding-top: calc(var(--spacing-3xl) + 60px);
     }
 }
 
@@ -439,5 +482,6 @@
     .service-showcase {
         gap: var(--spacing-5xl);
         padding: var(--spacing-4xl);
+        padding-top: calc(var(--spacing-4xl) + 60px);
     }
 }

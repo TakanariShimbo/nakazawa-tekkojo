@@ -248,6 +248,11 @@ p:last-child {
     }
 }
 
+/* フルワイドセクション */
+.section--full {
+    padding: 0;
+}
+
 /* スクリーンリーダー専用 */
 .sr-only {
     position: absolute;

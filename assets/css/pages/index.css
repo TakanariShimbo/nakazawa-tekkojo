@@ -43,7 +43,7 @@
 }
 
 .hero__content {
-    padding: 0 var(--spacing-3xl);
+    padding: 0;
     position: relative;
     z-index: 2;
     display: flex;
@@ -83,7 +83,6 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-4xl);
     align-items: center;
-    padding: 0 var(--spacing-3xl);
 }
 
 .intro__content {
@@ -143,9 +142,7 @@
 
 .service-tabs__nav {
     display: flex;
-    background: var(--color-white);
     border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
-    padding: var(--spacing-xs);
     position: absolute;
     top: 0;
     left: 0;
@@ -193,7 +190,6 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-4xl);
     align-items: center;
-    padding: var(--spacing-3xl);
     border-radius: var(--border-radius-lg);
     position: relative;
     margin-top: 0;
@@ -258,11 +254,6 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-3xl);
     align-items: start;
-    padding: 0 var(--spacing-3xl);
-}
-
-.company-info__content {
-    padding-right: var(--spacing-lg);
 }
 
 .company-info__table {
@@ -309,7 +300,6 @@
 }
 
 .cta__content {
-    padding: 0 var(--spacing-3xl);
     margin: 0 auto;
 }
 
@@ -352,7 +342,7 @@
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
         text-align: center;
-        padding: 0;
+        padding: 0 var(--spacing-xl);
     }
 
     .intro__content {
@@ -426,11 +416,10 @@
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
         text-align: center;
-        padding: 0;
+        padding: 0 var(--spacing-xl);
     }
 
     .company-info__content {
-        padding-right: 0;
         max-width: 500px;
         margin: 0 auto;
     }
@@ -447,7 +436,6 @@
     /* CTAセクション */
     .cta__content {
         text-align: center;
-        padding: 0;
     }
 
     .cta__buttons {
@@ -457,6 +445,10 @@
 
 /* タブレット */
 @media (min-width: 769px) and (max-width: 1023px) {
+    .intro {
+        gap: var(--spacing-lg);
+    }
+
     .service-tabs__nav {
         width: 100%;
         top: 0;
@@ -465,23 +457,28 @@
     }
 
     .service-showcase {
-        margin-top: 0;
-        padding-top: calc(var(--spacing-3xl) + 60px);
+        gap: var(--spacing-xl);
+        padding: var(--spacing-lg);
+        padding-top: var(--spacing-5xl);
+    }
+
+    .company-info {
+        gap: var(--spacing-xl);
     }
 }
 
 @media (min-width: 1024px) {
-    .hero__content {
-        gap: var(--spacing-5xl);
-    }
-
     .intro {
-        gap: var(--spacing-5xl);
+        gap: var(--spacing-xl);
     }
 
     .service-showcase {
-        gap: var(--spacing-5xl);
-        padding: var(--spacing-4xl);
-        padding-top: calc(var(--spacing-4xl) + 60px);
+        gap: var(--spacing-xl);
+        padding: var(--spacing-xl);
+        padding-top: var(--spacing-5xl);
+    }
+
+    .company-info {
+        gap: var(--spacing-xl);
     }
 }

@@ -1,0 +1,269 @@
+/* ==========================================================================
+   Layout Styles - レイアウト関連のスタイル
+   ========================================================================== */
+
+/* ヘッダーレイアウト */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-md);
+}
+
+.header__top {
+    background-color: var(--color-gray-100);
+    padding: var(--spacing-xs) 0;
+    font-size: var(--font-size-sm);
+}
+
+.header__contact {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-lg);
+}
+
+.header__contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-gray-700);
+}
+
+.header__main {
+    padding: var(--spacing-md) 0;
+}
+
+.header__main .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.header__logo img {
+    height: 50px;
+    width: auto;
+}
+
+.header__tagline {
+    display: none;
+}
+
+.header__company-name {
+    font-size: var(--font-size-lg);
+    margin-bottom: 0;
+}
+
+.header__slogan {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    margin-bottom: 0;
+}
+
+/* ナビゲーション */
+.header__nav {
+    background-color: var(--color-primary);
+    display: none;
+}
+
+.header__nav.is-active {
+    display: block;
+}
+
+.header__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.header__nav-link {
+    display: block;
+    padding: var(--spacing-md);
+    color: var(--color-white);
+    font-weight: 500;
+    transition: background-color var(--transition-fast);
+}
+
+.header__nav-link:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+}
+
+.header__nav-link--active {
+    background-color: var(--color-primary-dark);
+}
+
+/* メニューボタン */
+.header__menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--spacing-sm);
+}
+
+.header__menu-toggle-bar {
+    width: 24px;
+    height: 3px;
+    background-color: var(--color-gray-700);
+    transition: transform var(--transition-fast);
+}
+
+.header__menu-toggle.is-active .header__menu-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.header__menu-toggle.is-active .header__menu-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.header__menu-toggle.is-active .header__menu-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* フッターレイアウト */
+.footer {
+    background-color: var(--color-gray-900);
+    color: var(--color-gray-300);
+    margin-top: var(--spacing-3xl);
+}
+
+.footer__main {
+    padding: var(--spacing-2xl) 0;
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+}
+
+.footer__heading {
+    font-size: var(--font-size-xl);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer__nav-heading {
+    font-size: var(--font-size-lg);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer__address {
+    font-style: normal;
+    line-height: var(--line-height-relaxed);
+}
+
+.footer__address a {
+    color: var(--color-gray-300);
+}
+
+.footer__address a:hover {
+    color: var(--color-white);
+}
+
+.footer__nav-list,
+.footer__link-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer__nav-list a,
+.footer__link-list a {
+    color: var(--color-gray-300);
+    transition: color var(--transition-fast);
+}
+
+.footer__nav-list a:hover {
+    color: var(--color-white);
+}
+
+.footer__bottom {
+    background-color: var(--color-black);
+    padding: var(--spacing-md) 0;
+    text-align: center;
+}
+
+.footer__copyright {
+    font-size: var(--font-size-sm);
+    margin-bottom: 0;
+}
+
+/* メインコンテンツレイアウト */
+.main {
+    min-height: calc(100vh - 400px);
+}
+
+.page-header {
+    background-color: var(--color-gray-100);
+    padding: var(--spacing-2xl) 0;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.page-header__title {
+    font-size: var(--font-size-3xl);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.section {
+    padding: var(--spacing-2xl) 0;
+}
+
+.section--gray {
+    background-color: var(--color-gray-50);
+}
+
+/* タブレット以上のレスポンシブ対応 */
+@media (min-width: 768px) {
+    .header__tagline {
+        display: block;
+    }
+    
+    .header__logo img {
+        height: 60px;
+    }
+    
+    .header__menu-toggle {
+        display: none;
+    }
+    
+    .header__nav {
+        display: block !important;
+    }
+    
+    .header__nav-list {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .header__nav-link {
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+    
+    .footer__grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+    
+    .page-header__title {
+        font-size: var(--font-size-4xl);
+    }
+}
+
+/* デスクトップ以上 */
+@media (min-width: 1024px) {
+    .header__logo img {
+        height: 70px;
+    }
+    
+    .header__company-name {
+        font-size: var(--font-size-xl);
+    }
+}

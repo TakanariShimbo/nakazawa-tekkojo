@@ -1,0 +1,279 @@
+/* ==========================================================================
+   お問い合わせページ専用スタイル
+   ========================================================================== */
+
+/* お問い合わせラッパー */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* フォームセクション */
+.contact-form-section {
+    background-color: var(--color-white);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-form__title {
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-form__description {
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-xl);
+    line-height: var(--line-height-relaxed);
+}
+
+.required-note {
+    color: var(--color-error);
+    font-size: var(--font-size-sm);
+}
+
+/* フォームスタイル */
+.contact-form {
+    max-width: 600px;
+}
+
+.form-actions {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+/* チェックボックス */
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: var(--spacing-sm);
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.link-underline {
+    text-decoration: underline;
+    color: var(--color-primary);
+}
+
+.link-underline:hover {
+    color: var(--color-primary-light);
+}
+
+/* フォームメッセージ */
+.form-message {
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+.form-message h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-message--success {
+    background-color: #f0fdf4;
+    border: 2px solid var(--color-success);
+    color: var(--color-success);
+}
+
+.form-message--error {
+    background-color: #fef2f2;
+    border: 2px solid var(--color-error);
+    color: var(--color-error);
+}
+
+/* 連絡先情報セクション */
+.contact-info-section {
+    background-color: var(--color-gray-50);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius);
+}
+
+.contact-info__title {
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-info__item {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.contact-info__item:last-of-type {
+    border-bottom: none;
+}
+
+.contact-info__label {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-info__detail {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-info__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    transition: color var(--transition-fast);
+}
+
+.contact-info__phone:hover {
+    color: var(--color-primary-light);
+}
+
+.contact-info__icon {
+    font-size: var(--font-size-xl);
+}
+
+.contact-info__hours {
+    color: var(--color-gray-600);
+    font-size: var(--font-size-sm);
+}
+
+.contact-info__address {
+    font-style: normal;
+    line-height: var(--line-height-relaxed);
+}
+
+.contact-info__map {
+    margin-top: var(--spacing-md);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-info__notes {
+    margin-top: var(--spacing-xl);
+}
+
+.contact-info__list {
+    list-style: none;
+    margin-top: var(--spacing-sm);
+}
+
+.contact-info__list li {
+    padding-left: var(--spacing-lg);
+    position: relative;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-gray-600);
+    line-height: var(--line-height-relaxed);
+}
+
+.contact-info__list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* プライバシーポリシー */
+.privacy-policy {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.privacy-policy__content {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.privacy-policy__content h3 {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.privacy-policy__content h4 {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-800);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.privacy-policy__content p {
+    color: var(--color-gray-600);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-md);
+}
+
+.privacy-policy__content ul {
+    list-style: disc;
+    margin-left: var(--spacing-xl);
+    color: var(--color-gray-600);
+}
+
+.privacy-policy__content li {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* ローディング状態 */
+.contact-form--loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.contact-form--loading .btn {
+    position: relative;
+}
+
+.contact-form--loading .btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--color-white);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .contact-form-section,
+    .contact-info-section {
+        padding: var(--spacing-lg);
+    }
+    
+    .contact-info__phone {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-wrapper {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .contact-info-section {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+    }
+}

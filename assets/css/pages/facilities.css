@@ -1,0 +1,224 @@
+/* ==========================================================================
+   設備紹介ページ専用スタイル
+   ========================================================================== */
+
+/* 設備紹介イントロ */
+.facility-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-2xl);
+}
+
+.facility-intro__text {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-gray-700);
+}
+
+/* フィルターボタン */
+.facility-filter {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-2xl);
+    flex-wrap: wrap;
+}
+
+.facility-filter__btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-gray-300);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    color: var(--color-gray-700);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.facility-filter__btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.facility-filter__btn--active {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* 設備カテゴリー */
+.facility-category {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.facility-category__title {
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 3px solid var(--color-primary);
+}
+
+/* 設備グリッド */
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* 設備カード */
+.facility-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.facility-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.facility-card__image {
+    position: relative;
+    padding-top: 66.67%; /* 3:2 aspect ratio */
+    overflow: hidden;
+    background-color: var(--color-gray-100);
+}
+
+.facility-card__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.facility-card:hover .facility-card__image img {
+    transform: scale(1.05);
+}
+
+.facility-card__content {
+    padding: var(--spacing-lg);
+}
+
+.facility-card__name {
+    font-size: var(--font-size-xl);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-md);
+}
+
+.facility-card__specs {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.facility-card__specs dt {
+    font-weight: 600;
+    color: var(--color-gray-700);
+    font-size: var(--font-size-sm);
+}
+
+.facility-card__specs dd {
+    margin: 0 0 var(--spacing-sm) 0;
+    color: var(--color-gray-600);
+}
+
+/* その他の設備 */
+.other-facilities {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.other-facilities__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.other-facilities__item {
+    background-color: var(--color-gray-50);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--color-primary);
+}
+
+.other-facilities__title {
+    font-size: var(--font-size-lg);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.other-facilities__list {
+    list-style: none;
+}
+
+.other-facilities__list li {
+    padding: var(--spacing-xs) 0;
+    padding-left: var(--spacing-lg);
+    position: relative;
+    color: var(--color-gray-700);
+}
+
+.other-facilities__list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* フィルター機能用の非表示スタイル */
+.facility-category[data-category]:not([data-category="all"]) {
+    display: none;
+}
+
+.facility-category.is-visible {
+    display: block;
+}
+
+.facility-card {
+    opacity: 1;
+    transition: opacity var(--transition-normal);
+}
+
+.facility-card.is-hidden {
+    display: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .facility-filter {
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: var(--spacing-sm);
+    }
+    
+    .facility-filter__btn {
+        flex-shrink: 0;
+    }
+    
+    .facility-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .other-facilities__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .facility-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .facility-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

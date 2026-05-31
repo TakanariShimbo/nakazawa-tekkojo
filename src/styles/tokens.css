@@ -1,0 +1,69 @@
+/* =========================================================
+   デザイントークン  ―  ネイビー × アイボリー × オレンジ(指し色)
+   和モダン × インダストリアル
+   ========================================================= */
+:root {
+  /* --- ブランドカラー --- */
+  --c-navy:        #11203a; /* ベース暗：ヒーロー/暗セクション地 */
+  --c-navy-900:    #0b1626; /* さらに深い陰影 */
+  --c-navy-700:    #1c3052; /* ネイビーの面・ボーダー */
+  --c-ivory:       #f4f0e6; /* ベース明：明セクション地 */
+  --c-ivory-soft:  #eae4d6; /* アイボリーの陰 */
+  --c-orange:      #ff6400; /* 指し色：CTA・強調・ロゴ連動 */
+  --c-orange-600:  #e25800; /* オレンジ濃（hover） */
+  --c-ink:         #1a1d24; /* 墨：明地の本文 */
+  --c-ink-soft:    #44494f; /* 補助テキスト（明地） */
+  --c-cream-soft:  rgba(244, 240, 230, 0.72); /* 暗地の補助テキスト */
+  --c-line:        rgba(26, 29, 36, 0.12);     /* 明地の罫線 */
+  --c-line-dark:   rgba(244, 240, 230, 0.16);  /* 暗地の罫線 */
+
+  /* --- 役割ベースのエイリアス --- */
+  --bg:            var(--c-ivory);
+  --fg:            var(--c-ink);
+  --accent:        var(--c-orange);
+
+  /* --- タイポグラフィ --- */
+  /* === タイポグラフィ：役割で3層に分離 ===
+     基幹＝ゴシックで構造を一本化／情緒＝明朝を要所の差し色／技術＝等幅で数字・英字 */
+  --font-base:   "IBM Plex Sans JP", system-ui, "Helvetica Neue", sans-serif; /* 本文・見出し・UI */
+  --font-accent: "Shippori Mincho", "Yu Mincho", serif;                       /* 理念・象徴句のみ（明朝）*/
+  --font-mono:   "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;     /* 英字ラベル・数字 */
+
+  /* 既存参照向けエイリアス：既定はゴシックへ統一。明朝は要所だけ --font-accent を明示指定する */
+  --font-sans:  var(--font-base);
+  --font-serif: var(--font-base);
+  --font-en:    var(--font-mono);
+
+  /* 流体タイポ（clamp で画面幅に追従） */
+  --fs-hero:   clamp(2.6rem, 6vw, 5rem);
+  --fs-h2:     clamp(1.7rem, 3.4vw, 2.75rem);
+  --fs-h3:     clamp(1.15rem, 2vw, 1.5rem);
+  --fs-lead:   clamp(1rem, 1.4vw, 1.18rem);
+  --fs-body:   1rem;
+  --fs-small:  0.85rem;
+  --lh-tight:  1.18;
+  --lh-body:   1.85; /* 和文は行間広めで上質に */
+
+  /* --- 余白スケール（8px基準） --- */
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2rem;
+  --sp-5: 3rem;
+  --sp-6: 4rem;
+  --sp-7: 6rem;
+  --sp-8: 8rem;
+
+  /* --- レイアウト --- */
+  --container: 1180px;
+  --container-wide: 1380px;
+  --radius: 4px;       /* 工業的に角は控えめ */
+  --radius-lg: 10px;
+  --header-h: 76px;
+
+  /* --- 効果 --- */
+  --shadow-sm: 0 1px 2px rgba(11, 22, 38, 0.08);
+  --shadow-md: 0 12px 36px rgba(11, 22, 38, 0.14);
+  --shadow-lg: 0 30px 70px rgba(11, 22, 38, 0.22);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

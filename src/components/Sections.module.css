@@ -1,0 +1,191 @@
+/* 共通見出し */
+.h2 { font-size: var(--fs-h2); }
+.head { text-align: center; margin-bottom: var(--sp-5); display: grid; gap: var(--sp-2); justify-items: center; }
+
+/* ============ 中澤鉄工所とは ============ */
+.philosophy { padding: var(--sp-8) 0; background: var(--c-ivory); }
+.philGrid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(var(--sp-4), 6vw, var(--sp-7));
+  align-items: center;
+}
+.philTitle { font-family: var(--font-accent); font-weight: 700; font-size: var(--fs-h2); margin: var(--sp-2) 0 var(--sp-3); } /* 明朝の差し色：理念 */
+.philBody { color: var(--c-ink-soft); margin-bottom: var(--sp-3); }
+.values { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin-bottom: var(--sp-3); }
+.values li {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--c-line);
+  border-radius: 100px;
+  background: #fff;
+}
+.textLink {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  font-weight: 700; color: var(--c-orange-600);
+  transition: gap 0.25s var(--ease);
+}
+.textLink:hover { gap: 0.9em; }
+.philFigure { position: relative; }
+.philFigure img {
+  width: 100%; aspect-ratio: 4 / 3.4; object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.philFigure figcaption {
+  position: absolute; left: var(--sp-2); bottom: var(--sp-2);
+  background: var(--c-navy); color: var(--c-ivory);
+  font-size: 0.72rem; letter-spacing: 0.1em;
+  padding: 0.5rem 0.9rem; border-radius: var(--radius);
+}
+.philFigure::after {
+  content: ''; position: absolute; right: -14px; top: -14px;
+  width: 64px; height: 64px;
+  border-top: 3px solid var(--accent); border-right: 3px solid var(--accent);
+}
+
+/* ============ 事業案内（強み） ============ */
+.strengths { padding: var(--sp-8) 0; background: var(--c-ivory-soft); }
+.strengthGrid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-3);
+}
+.card {
+  background: #fff;
+  padding: var(--sp-4) var(--sp-3);
+  border-radius: var(--radius-lg);
+  border-top: 3px solid transparent;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s;
+}
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-top-color: var(--accent); }
+.cardNo {
+  font-family: var(--font-en); font-style: italic;
+  font-size: 2.4rem; color: var(--accent); line-height: 1;
+  display: block; margin-bottom: var(--sp-2);
+}
+.cardTitle { font-size: 1.1rem; margin-bottom: var(--sp-2); }
+.cardBody { font-size: 0.92rem; color: var(--c-ink-soft); }
+
+/* ============ 設備紹介（暗セクション） ============ */
+.facilities { position: relative; isolation: isolate; padding: var(--sp-8) 0; background: var(--c-navy); color: var(--c-ivory); }
+.facilities::before {
+  content: '';
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(244, 240, 230, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 240, 230, 0.045) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(120% 90% at 50% 0%, #000 30%, transparent 80%);
+  mask-image: radial-gradient(120% 90% at 50% 0%, #000 30%, transparent 80%);
+}
+.headDark { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-3); margin-bottom: var(--sp-5); }
+.facGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); }
+.facCard {
+  display: block;
+  border: 1px solid var(--c-line-dark);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--c-navy-700);
+  transition: transform 0.3s var(--ease), border-color 0.3s;
+}
+.facCard:hover { transform: translateY(-6px); border-color: var(--accent); }
+.facPhoto { aspect-ratio: 3 / 2; overflow: hidden; }
+.facPhoto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.facCard:hover .facPhoto img { transform: scale(1.06); }
+.facMeta { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-1); padding: var(--sp-3); }
+.facMeta h3 { font-size: 1.05rem; }
+.facCount { color: var(--accent); font-family: var(--font-base); font-weight: 700; letter-spacing: 0.06em; }
+
+.ghostLink, .ghostLinkDark {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  white-space: nowrap; font-weight: 500;
+  transition: gap 0.25s var(--ease);
+}
+.ghostLink { color: var(--c-ivory); }
+.ghostLink:hover, .ghostLinkDark:hover { gap: 0.9em; }
+.ghostLinkDark { color: var(--c-orange-600); font-weight: 700; }
+
+/* ============ ネットワーク ============ */
+.network { padding: var(--sp-8) 0; background: var(--c-ivory); }
+.netHead { max-width: 40rem; margin-bottom: var(--sp-5); }
+.netHead .h2 { margin: var(--sp-2) 0 var(--sp-2); }
+.netLead { color: var(--c-ink-soft); }
+.netList { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--c-line); border: 1px solid var(--c-line); border-radius: var(--radius-lg); overflow: hidden; }
+.netList li { background: var(--c-ivory); padding: var(--sp-3); display: flex; flex-direction: column; gap: 0.4rem; transition: background 0.3s; }
+.netList li:hover { background: #fff; }
+.netList strong { font-family: var(--font-serif); font-size: 1.05rem; position: relative; padding-left: 0.9em; }
+.netList strong::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; background: var(--accent); }
+.netList span { font-size: 0.86rem; color: var(--c-ink-soft); }
+
+/* ============ 製品 ＋ 採用バンド ============ */
+.band { display: grid; grid-template-columns: 1fr 1fr; min-height: 460px; }
+.bandCard { position: relative; display: flex; align-items: flex-end; overflow: hidden; padding: var(--sp-6) clamp(var(--sp-3), 5vw, var(--sp-6)); color: var(--c-ivory); }
+.bandProducts img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
+.bandProducts:hover img { transform: scale(1.06); }
+.bandScrim { position: absolute; inset: 0; background: linear-gradient(0deg, var(--c-navy-900) 6%, rgba(11,22,38,0.55) 50%, rgba(11,22,38,0.3) 100%); }
+.bandRecruit { background: linear-gradient(135deg, var(--c-orange-600), var(--accent)); }
+.bandInner { position: relative; z-index: 1; max-width: 28rem; }
+.bandInner h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: var(--sp-1) 0 var(--sp-2); }
+.bandInner p { opacity: 0.94; margin-bottom: var(--sp-3); }
+.bandMore { display: inline-flex; align-items: center; gap: 0.5em; font-weight: 700; transition: gap 0.25s var(--ease); }
+.bandCard:hover .bandMore { gap: 0.9em; }
+.bandRecruit :global(.eyebrow) { color: #fff; }
+.bandRecruit :global(.eyebrow)::before { background: #fff; }
+
+/* ============ お知らせ ============ */
+.news { padding: var(--sp-8) 0; background: var(--c-ivory-soft); }
+.newsHead { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-3); margin-bottom: var(--sp-4); }
+.newsHead .h2 { margin-top: var(--sp-2); }
+.newsList { border-top: 1px solid var(--c-line); }
+.newsList li { border-bottom: 1px solid var(--c-line); }
+.newsList a {
+  display: grid;
+  grid-template-columns: 8rem 6rem 1fr auto;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-1);
+  transition: background 0.25s, padding-left 0.25s var(--ease);
+}
+.newsList a:hover { background: #fff; padding-left: var(--sp-2); }
+.newsList time { font-family: var(--font-en); color: var(--c-ink-soft); letter-spacing: 0.04em; }
+.newsCat { justify-self: start; font-size: 0.72rem; letter-spacing: 0.08em; padding: 0.25rem 0.75rem; border-radius: 100px; border: 1px solid var(--c-line); }
+.newsCat[data-cat="ブログ"] { color: var(--c-orange-600); border-color: rgba(255,100,0,0.4); }
+.newsCat[data-cat="お知らせ"] { color: var(--c-navy-700); border-color: rgba(28,48,82,0.35); }
+.newsTitle { font-family: var(--font-serif); }
+.newsArrow { color: var(--accent); transition: transform 0.25s var(--ease); }
+.newsList a:hover .newsArrow { transform: translateX(4px); }
+
+/* ============ お問い合わせ CTA ============ */
+.cta { padding: var(--sp-8) 0; background: var(--c-navy); color: var(--c-ivory); position: relative; overflow: hidden; }
+.cta::before { content: '削'; position: absolute; right: -2%; bottom: -18%; font-family: var(--font-accent); font-size: 34vw; color: rgba(244,240,230,0.04); line-height: 1; pointer-events: none; }
+.ctaInner { position: relative; z-index: 1; text-align: center; display: grid; justify-items: center; gap: var(--sp-2); }
+.ctaTitle { font-size: var(--fs-h2); }
+.ctaLead { max-width: 40rem; color: var(--c-cream-soft); margin-bottom: var(--sp-3); }
+.ctaActions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-3); }
+.ctaPrimary { background: var(--accent); color: #fff; font-weight: 700; padding: 1.05rem 2.4rem; border-radius: var(--radius); box-shadow: 0 12px 30px rgba(255,100,0,0.3); transition: transform 0.25s var(--ease), background 0.25s; }
+.ctaPrimary:hover { background: var(--c-orange-600); transform: translateY(-2px); }
+.ctaTel { display: grid; line-height: 1.25; text-align: left; padding-left: var(--sp-3); border-left: 1px solid var(--c-line-dark); }
+.ctaTel small { font-size: 0.7rem; letter-spacing: 0.1em; color: var(--c-cream-soft); }
+.ctaTel strong { font-family: var(--font-en); font-size: 1.7rem; letter-spacing: 0.04em; }
+
+/* ============ レスポンシブ ============ */
+.brSp { display: none; }
+@media (max-width: 1080px) {
+  .strengthGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .philGrid { grid-template-columns: 1fr; }
+  .philFigure { order: -1; }
+  .facGrid { grid-template-columns: 1fr; }
+  .band { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .strengthGrid { grid-template-columns: 1fr; }
+  .newsList a { grid-template-columns: 1fr auto; row-gap: 0.4rem; padding: var(--sp-3) var(--sp-1); }
+  .newsList time { grid-column: 1; }
+  .newsCat { grid-column: 2; grid-row: 1; }
+  .newsTitle { grid-column: 1 / -1; }
+  .newsArrow { display: none; }
+  .ctaTel { border-left: none; padding-left: 0; justify-items: center; text-align: center; }
+  .headDark, .newsHead { flex-direction: column; align-items: flex-start; }
+}

@@ -1,0 +1,42 @@
+.form { max-width: 720px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+.field { display: flex; flex-direction: column; gap: 0.5rem; grid-column: 1 / -1; }
+.half { grid-column: span 1; }
+@media (max-width: 560px) { .half { grid-column: 1 / -1; } }
+
+.field label { font-weight: 700; font-size: 0.92rem; display: flex; align-items: center; gap: 0.6em; }
+.req { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; color: #fff; background: var(--accent); padding: 0.15rem 0.5rem; border-radius: 3px; }
+
+.field input,
+.field textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--c-ink);
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.field textarea { resize: vertical; line-height: 1.7; }
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 100, 0, 0.15);
+}
+
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.submit { margin-top: var(--sp-4); }
+.submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.notice { margin-top: var(--sp-3); font-size: 0.85rem; color: var(--c-orange-600); background: rgba(255,100,0,0.07); border: 1px dashed rgba(255,100,0,0.4); border-radius: var(--radius); padding: var(--sp-2); }
+.notice code { font-family: var(--font-mono); font-size: 0.85em; }
+.error { margin-top: var(--sp-3); color: #c0392b; font-weight: 500; }
+
+.done { max-width: 640px; text-align: center; background: #fff; border-radius: var(--radius-lg); padding: var(--sp-6) var(--sp-4); box-shadow: var(--shadow-md); }
+.doneMark { display: inline-grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 1.8rem; margin-bottom: var(--sp-3); }
+.done h3 { font-size: 1.5rem; margin-bottom: var(--sp-2); }
+.done p { color: var(--c-ink-soft); }

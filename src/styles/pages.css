@@ -1,0 +1,65 @@
+/* =========================================================
+   下層ページ共通ユーティリティ（グローバルクラス）
+   ========================================================= */
+
+.section { padding: clamp(var(--sp-6), 9vw, var(--sp-8)) 0; }
+.section.alt { background: var(--c-ivory-soft); }
+.section.navy { background: var(--c-navy); color: var(--c-ivory); }
+.section.navy .lead { color: var(--c-cream-soft); }
+
+.sectionHead { display: grid; gap: var(--sp-2); margin-bottom: var(--sp-5); max-width: 48rem; }
+.sectionHead.center { justify-items: center; text-align: center; margin-inline: auto; }
+.sectionHead h2 { font-size: var(--fs-h2); }
+
+.lead { font-size: var(--fs-lead); color: var(--c-ink-soft); }
+
+/* 本文（prose） */
+.prose { max-width: 42rem; }
+.prose p { margin-bottom: 1.3em; color: var(--c-ink-soft); }
+.prose p:last-child { margin-bottom: 0; }
+.section.navy .prose p { color: var(--c-cream-soft); }
+
+/* スペック / 概要テーブル */
+.specTable { width: 100%; border-collapse: collapse; }
+.specTable th,
+.specTable td { border-bottom: 1px solid var(--c-line); padding: var(--sp-3) 0.5rem; text-align: left; vertical-align: top; }
+.specTable tr:first-child th,
+.specTable tr:first-child td { border-top: 1px solid var(--c-line); }
+.specTable th {
+  width: 12rem;
+  font-family: var(--font-base);
+  font-weight: 700;
+  color: var(--c-ink);
+  white-space: nowrap;
+}
+.specTable td { color: var(--c-ink-soft); }
+@media (max-width: 600px) {
+  .specTable th, .specTable td { display: block; width: auto; padding: 0.4rem 0; border: none; }
+  .specTable th { padding-top: var(--sp-2); color: var(--accent); font-size: var(--fs-small); }
+  .specTable tr { display: block; padding: var(--sp-2) 0; border-bottom: 1px solid var(--c-line); }
+  .specTable tr:first-child th, .specTable tr:first-child td { border-top: none; }
+}
+
+/* 汎用ボタン */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6em;
+  padding: 0.95rem 2rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  transition: transform 0.25s var(--ease), background 0.25s, gap 0.25s var(--ease), border-color 0.25s;
+}
+.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 12px 30px rgba(255,100,0,0.28); }
+.btn-primary:hover { background: var(--c-orange-600); transform: translateY(-2px); }
+.btn-ghost { border: 1px solid var(--c-line); }
+.btn-ghost:hover { gap: 1em; border-color: var(--c-ink); }
+.section.navy .btn-ghost { border-color: var(--c-line-dark); color: var(--c-ivory); }
+.section.navy .btn-ghost:hover { border-color: var(--c-ivory); }
+
+/* テキストリンク */
+.tlink { display: inline-flex; align-items: center; gap: 0.5em; font-weight: 700; color: var(--c-orange-600); transition: gap 0.25s var(--ease); }
+.tlink:hover { gap: 0.9em; }
+
+/* 2カラム（本文＋図） */
+.split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(var(--sp-4), 6vw, var(--sp-7)); align-items: center; }
+.split.rev > :first-child { order: 2; }
+@media (max-width: 880px) { .split { grid-template-columns: 1fr; } .split.rev > :first-child { order: 0; } }

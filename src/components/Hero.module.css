@@ -1,0 +1,160 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--c-ivory);
+  overflow: hidden;
+  padding: calc(var(--header-h) + var(--sp-5)) 0 var(--sp-6);
+}
+
+.bg { position: absolute; inset: 0; z-index: 0; }
+.bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  animation: zoom 16s ease-out forwards;
+}
+@keyframes zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+
+/* ネイビーのスクリム（左濃→右薄）で文字を立たせる */
+.scrim {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg, var(--c-navy-900) 8%, rgba(17, 32, 58, 0.82) 38%, rgba(17, 32, 58, 0.28) 72%, rgba(17, 32, 58, 0.12) 100%),
+    linear-gradient(0deg, var(--c-navy-900) 0%, transparent 30%);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2 * var(--sp-3), var(--container-wide));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  font-family: var(--font-en);
+  font-size: 0.78rem;
+  letter-spacing: 0.34em;
+  color: var(--c-ivory);
+  opacity: 0.8;
+  margin-bottom: var(--sp-3);
+  padding-left: 0.2em;
+}
+
+.title {
+  font-family: var(--font-accent); /* 明朝の差し色：ヒーローの象徴句 */
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: var(--sp-3);
+}
+.title .en {
+  display: block;
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2em;
+}
+.title .jp {
+  display: block;
+  font-size: var(--fs-hero);
+  letter-spacing: 0.04em;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+}
+.title .accent { color: var(--accent); }
+
+.lead {
+  font-size: var(--fs-lead);
+  max-width: 34em;
+  color: var(--c-ivory);
+  opacity: 0.92;
+  margin-bottom: var(--sp-4);
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.primary {
+  position: relative;
+  overflow: hidden;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.95rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 30px rgba(255, 100, 0, 0.32);
+  transition: transform 0.25s var(--ease), background 0.25s;
+}
+.primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -120%;
+  width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: skewX(-18deg);
+  transition: left 0.6s var(--ease);
+}
+.primary:hover::after { left: 130%; }
+.primary:hover { background: var(--c-orange-600); transform: translateY(-2px); }
+
+/* 縦書きラベル（右端の signature） */
+.vlabel {
+  position: absolute;
+  right: clamp(0.5rem, 2vw, 1.6rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: var(--c-ivory);
+  opacity: 0.55;
+}
+.vlabel::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: var(--accent);
+  margin: 0 auto 1rem;
+}
+@media (max-width: 900px) { .vlabel { display: none; } }
+.ghost {
+  display: inline-flex; align-items: center; gap: 0.6em;
+  padding: 0.95rem 1.6rem;
+  border: 1px solid var(--c-line-dark);
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: gap 0.25s var(--ease), border-color 0.25s, background 0.25s;
+}
+.ghost:hover { gap: 1em; border-color: var(--c-ivory); background: rgba(244,240,230,0.06); }
+
+.meta {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2 * var(--sp-3), var(--container-wide));
+  margin: var(--sp-6) auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-accent); /* 明朝の差し色：理念の一文 */
+  letter-spacing: 0.18em;
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+.scroll {
+  display: inline-flex; align-items: center; gap: 0.7em;
+  font-family: var(--font-en);
+  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+}
+.scroll span {
+  width: 1px; height: 42px;
+  background: linear-gradient(var(--accent), transparent);
+  animation: drop 1.8s var(--ease) infinite;
+  transform-origin: top;
+}
+@keyframes drop { 0% { transform: scaleY(0); } 40% { transform: scaleY(1); } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+@media (max-width: 680px) {
+  .meta span { display: none; }
+  .meta { justify-content: flex-end; }
+}

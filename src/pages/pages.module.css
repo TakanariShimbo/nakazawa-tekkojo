@@ -1,0 +1,71 @@
+/* 下層ページ固有のパーツ（複数ページで共有） */
+
+/* --- 価値観カード（About） --- */
+.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); }
+.valueCard { background: #fff; border-radius: var(--radius-lg); padding: var(--sp-4); border-top: 3px solid var(--accent); box-shadow: var(--shadow-sm); }
+.valueCard .num { font-family: var(--font-mono); color: var(--accent); font-size: 0.8rem; letter-spacing: 0.2em; }
+.valueCard h3 { font-size: 1.4rem; margin: 0.4rem 0 0.6rem; }
+.valueCard p { font-size: 0.92rem; color: var(--c-ink-soft); }
+@media (max-width: 760px) { .values { grid-template-columns: 1fr; } }
+
+/* --- モットー --- */
+.mottos { display: grid; gap: var(--sp-2); margin-top: var(--sp-4); }
+.mottos li {
+  font-family: var(--font-accent);
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  padding-left: 1.4em; position: relative;
+}
+.mottos li::before { content: '「'; position: absolute; left: 0; color: var(--accent); }
+.mottos li::after { content: '」'; color: var(--accent); }
+
+/* --- 沿革タイムライン（Company） --- */
+.timeline { position: relative; margin-left: 0.5rem; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 0.4rem; bottom: 0.4rem; width: 2px; background: var(--c-line); }
+.tlRow { position: relative; display: grid; grid-template-columns: 11rem 1fr; gap: var(--sp-3); padding: 0 0 var(--sp-4) var(--sp-4); }
+.tlRow::before { content: ''; position: absolute; left: -5px; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--c-ivory); }
+.tlYear { font-family: var(--font-mono); font-weight: 600; color: var(--c-navy-700); letter-spacing: 0.02em; }
+.tlText { color: var(--c-ink-soft); }
+@media (max-width: 640px) {
+  .tlRow { grid-template-columns: 1fr; gap: 0.2rem; }
+  .tlYear { color: var(--accent); font-size: 0.85rem; }
+}
+
+/* --- 取引先 --- */
+.clients { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.clients li { background: #fff; border: 1px solid var(--c-line); border-radius: 100px; padding: 0.6rem 1.4rem; font-weight: 500; }
+
+/* --- 設備の機械リスト（Facilities） --- */
+.machineList { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: var(--sp-3); }
+.machineList li {
+  font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.02em;
+  border: 1px solid var(--c-line); border-radius: var(--radius); padding: 0.45rem 0.9rem; color: var(--c-ink-soft);
+}
+:global(.section.navy) .machineList li { border-color: var(--c-line-dark); color: var(--c-cream-soft); }
+.facCountBig { font-family: var(--font-mono); color: var(--accent); font-weight: 600; font-size: 1.1rem; letter-spacing: 0.04em; }
+.figure img { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); aspect-ratio: 4 / 3; object-fit: cover; }
+
+/* --- 製品ギャラリー（Products） --- */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); }
+.galleryItem { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4 / 3; background: var(--c-navy-700); }
+.galleryItem img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.galleryItem:hover img { transform: scale(1.06); }
+.galleryItem figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: var(--sp-3); background: linear-gradient(0deg, rgba(11,22,38,0.85), transparent); color: var(--c-ivory); }
+.galleryItem .cat { display: block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; margin-bottom: 0.2rem; }
+.galleryItem .ttl { font-family: var(--font-base); font-weight: 700; }
+@media (max-width: 860px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .gallery { grid-template-columns: 1fr; } }
+
+/* --- 強み（Service） --- */
+.strengthRows { display: grid; gap: var(--sp-3); }
+.strengthRow { display: grid; grid-template-columns: 5rem 1fr; gap: var(--sp-3); padding: var(--sp-4) 0; border-top: 1px solid var(--c-line); align-items: start; }
+.strengthRow .no { font-family: var(--font-mono); font-style: italic; font-size: 2.2rem; color: var(--accent); line-height: 1; }
+.strengthRow h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.strengthRow p { color: var(--c-ink-soft); }
+@media (max-width: 560px) { .strengthRow { grid-template-columns: 1fr; gap: 0.5rem; } }
+
+/* --- ネットワーク（Service） --- */
+.netGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--c-line); border: 1px solid var(--c-line); border-radius: var(--radius-lg); overflow: hidden; }
+.netGrid li { background: var(--c-ivory); padding: var(--sp-3); }
+.netGrid strong { font-family: var(--font-base); font-size: 1.05rem; position: relative; padding-left: 0.9em; }
+.netGrid strong::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; background: var(--accent); }
+.netGrid span { display: block; margin-top: 0.4rem; font-size: 0.86rem; color: var(--c-ink-soft); }

@@ -1,0 +1,16 @@
+.layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(var(--sp-4), 6vw, var(--sp-7)); align-items: start; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+.aside { position: sticky; top: calc(var(--header-h) + var(--sp-3)); }
+@media (max-width: 900px) { .aside { position: static; } }
+.asideTitle { font-size: clamp(1.5rem, 3vw, 2rem); margin: var(--sp-2) 0 var(--sp-3); }
+.asideLead { color: var(--c-ink-soft); margin-bottom: var(--sp-4); }
+
+.info { display: grid; gap: var(--sp-3); border-top: 1px solid var(--c-line); padding-top: var(--sp-4); }
+.info div { display: grid; gap: 0.2rem; }
+.info dt { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.info dd { color: var(--c-ink-soft); margin: 0; line-height: 1.7; }
+.tel { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 600; color: var(--c-ink); letter-spacing: 0.02em; }
+.tel:hover { color: var(--accent); }
+
+.formWrap { background: var(--c-ivory-soft); border-radius: var(--radius-lg); padding: clamp(var(--sp-3), 4vw, var(--sp-5)); }

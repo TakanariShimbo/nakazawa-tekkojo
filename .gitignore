@@ -1,0 +1,13 @@
+node_modules
+dist
+.vite-react-ssg-temp
+*.local
+.DS_Store
+.playwright-cli
+
+# 開発中のスクリーンショット（成果物ではないので除外）
+docs/prototype-shots
+docs/current-site-reference
+
+# Claude Code ローカル設定
+.claude

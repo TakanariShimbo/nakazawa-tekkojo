@@ -1,0 +1,41 @@
+.noteBanner {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3);
+  background: var(--c-navy); color: var(--c-ivory);
+  border-radius: var(--radius-lg); padding: var(--sp-4);
+  margin-bottom: var(--sp-6);
+  transition: transform 0.3s var(--ease);
+}
+.noteBanner:hover { transform: translateY(-3px); }
+.noteTag { display: inline-block; font-family: var(--font-mono); font-weight: 600; letter-spacing: 0.04em; background: var(--accent); color: #fff; padding: 0.2rem 0.7rem; border-radius: 3px; font-size: 0.78rem; margin-bottom: 0.7rem; }
+.noteBanner strong { display: block; font-family: var(--font-base); font-size: 1.15rem; margin-bottom: 0.4rem; }
+.noteBanner p { color: var(--c-cream-soft); font-size: 0.9rem; }
+.noteArrow { font-size: 1.6rem; color: var(--accent); }
+
+.head { margin-bottom: var(--sp-3); }
+
+.list { border-top: 1px solid var(--c-line); }
+.list li { border-bottom: 1px solid var(--c-line); }
+.list a {
+  display: grid; grid-template-columns: 8rem 6rem 1fr auto; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-1);
+  transition: background 0.25s, padding-left 0.25s var(--ease);
+}
+.list a:hover { background: var(--c-ivory-soft); padding-left: var(--sp-2); }
+.list time { font-family: var(--font-mono); color: var(--c-ink-soft); letter-spacing: 0.02em; }
+.cat { justify-self: start; font-size: 0.72rem; letter-spacing: 0.08em; padding: 0.25rem 0.75rem; border-radius: 100px; border: 1px solid var(--c-line); }
+.cat[data-cat='ブログ'] { color: var(--c-orange-600); border-color: rgba(255,100,0,0.4); }
+.cat[data-cat='お知らせ'] { color: var(--c-navy-700); border-color: rgba(28,48,82,0.35); }
+.title { font-family: var(--font-base); font-weight: 500; }
+.arrow { color: var(--accent); }
+
+.foot { margin-top: var(--sp-4); font-size: 0.82rem; color: var(--c-ink-soft); }
+.foot code { font-family: var(--font-mono); font-size: 0.85em; background: var(--c-ivory-soft); padding: 0.1rem 0.4rem; border-radius: 3px; }
+
+@media (max-width: 620px) {
+  .noteBanner { flex-direction: column; align-items: flex-start; }
+  .list a { grid-template-columns: 1fr auto; row-gap: 0.4rem; }
+  .list time { grid-column: 1; }
+  .cat { grid-column: 2; grid-row: 1; }
+  .title { grid-column: 1 / -1; }
+  .arrow { display: none; }
+}

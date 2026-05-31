@@ -1,0 +1,49 @@
+.hero {
+  position: relative;
+  background: var(--c-navy);
+  color: var(--c-ivory);
+  padding: calc(var(--header-h) + var(--sp-6)) 0 var(--sp-6);
+  overflow: hidden;
+}
+/* 写真指定時は薄く敷く */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: var(--ph, none);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+}
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(rgba(244, 240, 230, 0.05) 1px, transparent 1px) 0 0 / 60px 60px,
+    linear-gradient(90deg, rgba(244, 240, 230, 0.05) 1px, transparent 1px) 0 0 / 60px 60px,
+    linear-gradient(100deg, var(--c-navy-900) 18%, rgba(17, 32, 58, 0.55) 100%);
+}
+/* 右下の装飾 */
+.inner { position: relative; z-index: 1; }
+
+.crumb {
+  display: flex; align-items: center; gap: 0.6em;
+  font-family: var(--font-mono);
+  font-size: 0.72rem; letter-spacing: 0.08em;
+  color: var(--c-cream-soft);
+  margin-bottom: var(--sp-4);
+}
+.crumb a { transition: color 0.2s; }
+.crumb a:hover { color: var(--accent); }
+.crumb span[aria-hidden] { opacity: 0.5; }
+
+.en {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--sp-2);
+}
+.en::before { content: '— '; }
+.title { font-size: clamp(2rem, 4.5vw, 3.2rem); letter-spacing: 0.02em; }
+.lead { margin-top: var(--sp-3); max-width: 44rem; color: var(--c-ivory); opacity: 0.9; }

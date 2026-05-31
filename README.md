@@ -3,6 +3,12 @@
 有限会社 中澤鉄工所（新潟県見附市・金属切削加工）コーポレートサイトの、
 WordPress からのモダンリニューアル版。
 
+## 🔒 関係者限定プレビュー（公開中）
+- URL: https://takanarishimbo.github.io/nakazawa-tekkojo/
+- パスワード: `nakazawa2026`（素人向けのソフトな目隠し。詳細: [`docs/PREVIEW_GATE.md`](docs/PREVIEW_GATE.md)）
+- `main` への push で GitHub Actions が自動ビルド・デプロイ
+- 旧バージョン（手書きHTML）は `legacy-html` ブランチに保全
+
 ## 技術スタック
 - **Vite + React + TypeScript**
 - **CSS Modules + デザイントークン**（`src/styles/tokens.css`）
